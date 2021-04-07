@@ -10,7 +10,7 @@
   filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
 }
 
-.navbar__logo h2 {
+.navbar__logo a {
   color: #f4f4f4;
   font-size: 1.4rem;
   cursor: pointer;

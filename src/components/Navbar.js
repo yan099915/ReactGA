@@ -13,10 +13,9 @@ const Navbar = ({ click }) => {
 
   return (
     <nav className="navbar">
-      <div className="navbar__logo">
-        <img src={logo}></img>
-      </div>
-
+      <a href="/">
+        <img src={logo} alt="logo" className="logo" />
+      </a>
       <ul className="navbar__links">
         <li>
           <Link to="/cart" className="cart__link">
