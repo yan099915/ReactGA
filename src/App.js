@@ -14,6 +14,7 @@ import ProductScreen from "./screens/ProductScreen";
 import CartScreen from "./screens/CartScreen";
 import BoyScreen from "./screens/BoyScreen";
 import GirlScreen from "./screens/GirlScreen";
+import CheckoutScreen from "./screens/CheckoutScreen";
 
 function App() {
   const [sideToggle, setSideToggle] = useState(false);
@@ -30,6 +31,7 @@ function App() {
           <Route exact path="/girl" component={GirlScreen} />
           <Route exact path="/product/:id" component={ProductScreen} />
           <Route exact path="/cart" component={CartScreen} />
+          <Route exact path="/checkout" component={CheckoutScreen} />
         </Switch>
         <Footer click={() => setSideToggle(true)} />
       </main>

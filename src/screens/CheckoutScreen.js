@@ -1,4 +1,4 @@
-import "./CartScreen.css";
+import "./CheckoutScreen.css";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -12,7 +12,7 @@ import CartItem from "../components/CartItem";
 // Actions
 import { addToCart, removeFromCart } from "../redux/actions/cartActions";
 
-const CartScreen = () => {
+const CheckoutScreen = () => {
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
@@ -47,7 +47,7 @@ const CartScreen = () => {
     <>
       <div className="cartscreen">
         <div className="cartscreen__left">
-          <h2>Shopping Cart</h2>
+          <h2>Checkout Items</h2>
 
           {cartItems.length === 0 ? (
             <div>
@@ -63,24 +63,53 @@ const CartScreen = () => {
               />
             ))
           )}
-        </div>
-
-        <div className="cartscreen__right">
-          <div className="cartscreen__info">
-            <p>Subtotal ({getCartCount()}) items</p>
-            <NumberFormat
-              value={getCartSubTotal()}
-              className="foo"
-              displayType={"text"}
-              thousandSeparator={true}
-              prefix={"Rp "}
-              renderText={(value, props) => <div {...props}>{value}</div>}
-            />
-          </div>
-          <div>
-            <Link to="/checkout">
-              <button className="checkout_button">Proceed To Checkout</button>
-            </Link>
+          <div className="cartscreen__right">
+            <div>
+              <span>Enter Your Shipping Address</span>
+              <hr></hr>
+              <form>
+                <label for="fname">First name:</label>
+                <br></br>
+                <input
+                  className="name_form"
+                  type="text"
+                  id="fname"
+                  name="fname"
+                ></input>
+                <br></br>
+                <label for="telp">Telp:</label>
+                <br></br>
+                <input
+                  className="telp_form"
+                  type="text"
+                  id="telp"
+                  name="telp"
+                ></input>
+                <br></br>
+                <label for="address">Full Address:</label>
+                <br></br>
+                <textarea
+                  className="address_form"
+                  type="text"
+                  id="address"
+                  name="address"
+                ></textarea>
+              </form>
+            </div>
+            <div className="cartscreen__info">
+              <p>Subtotal ({getCartCount()}) items</p>
+              <NumberFormat
+                value={getCartSubTotal()}
+                className="foo"
+                displayType={"text"}
+                thousandSeparator={true}
+                prefix={"Rp "}
+                renderText={(value, props) => <div {...props}>{value}</div>}
+              />
+            </div>
+            <div>
+              <button href="/">Place Order</button>
+            </div>
           </div>
         </div>
       </div>
@@ -88,4 +117,4 @@ const CartScreen = () => {
   );
 };
 
-export default withRouter(CartScreen);
+export default withRouter(CheckoutScreen);
