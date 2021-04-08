@@ -1,6 +1,6 @@
 .productscreen {
   max-width: 1300px;
-  min-height: 600px;
+  min-height: 800px;
   margin: 1rem auto;
   display: flex;
 }

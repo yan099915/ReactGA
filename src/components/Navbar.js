@@ -18,12 +18,14 @@ const Navbar = ({ click }) => {
       <a href="/">
         <img src={logo} alt="logo" className="logo" />
       </a>
-      <a href="/boy" className="boy">
-        <img src={boy} alt="logo" className="logo" />
-      </a>
-      <a href="/girl" className="girl">
-        <img src={girl} alt="logo" className="logo" />
-      </a>
+      <div className="gigi">
+        <a href="/boy" className="boy">
+          <img src={boy} alt="logo" className="logo" />
+        </a>
+        <a href="/girl" className="girl">
+          <img src={girl} alt="logo" className="logo" />
+        </a>
+      </div>
       <ul className="navbar__links">
         <li>
           <Link to="/cart" className="cart__link">
