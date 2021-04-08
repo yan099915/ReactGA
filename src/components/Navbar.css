@@ -53,31 +53,32 @@
 }
 
 .navbar__links > li > a > span {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   display: flex;
   align-items: center;
   margin-left: 8px;
 }
 
 .cart__link {
-  background: rgb(0, 0, 0);
-  color: white;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(218, 213, 213);
+  color: rgb(255, 255, 255);
   padding: 10px;
   border-radius: 8px;
 }
 
 .cart__link:hover {
-  background: #202020;
-  color: white;
+  background: #dbdbdb;
+  color: rgb(0, 0, 0);
 }
 
 .cartlogo__badge {
   width: 30px;
   height: 30px;
-  background-color: #f4f4f4;
+  background-color: #9b9b9b;
   border-radius: 50%;
   margin-left: 8px;
-  color: #171717;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
