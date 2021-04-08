@@ -10,15 +10,14 @@ import Product from "../components/Product";
 //Actions
 import { getProducts as listProducts } from "../redux/actions/productActions";
 
-const { REACT_APP_GA_TRACKING_CODE } = process.env;
-ReactGA.initialize(REACT_APP_GA_TRACKING_CODE);
-
 const HomeScreen = () => {
   const dispatch = useDispatch();
 
   const getProducts = useSelector((state) => state.getProducts);
   const { products, loading, error } = getProducts;
 
+  const { REACT_APP_GA_TRACKING_CODE } = process.env;
+  ReactGA.initialize(REACT_APP_GA_TRACKING_CODE);
   useEffect(() => {
     ReactGA.pageview(window.location.pathname + window.location.search);
     dispatch(listProducts());

@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import NumberFormat from "react-number-format";
+import ReactGA from "react-ga";
+import { withRouter } from "react-router-dom";
 
 // Components
 import CartItem from "../components/CartItem";
@@ -16,7 +18,12 @@ const CartScreen = () => {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
-  useEffect(() => {}, []);
+  const { REACT_APP_GA_TRACKING_CODE } = process.env;
+  ReactGA.initialize(REACT_APP_GA_TRACKING_CODE);
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
   const qtyChangeHandler = (id, qty) => {
     dispatch(addToCart(id, qty));
@@ -79,4 +86,4 @@ const CartScreen = () => {
   );
 };
 
-export default CartScreen;
+export default withRouter(CartScreen);

@@ -2,6 +2,8 @@ import "./ProductScreen.css";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import NumberFormat from "react-number-format";
+import ReactGA from "react-ga";
+import { withRouter } from "react-router-dom";
 
 // Actions
 import { getProductDetails } from "../redux/actions/productActions";
@@ -13,8 +15,11 @@ const ProductScreen = ({ match, history }) => {
 
   const productDetails = useSelector((state) => state.getProductDetails);
   const { loading, error, product } = productDetails;
+  const { REACT_APP_GA_TRACKING_CODE } = process.env;
+  ReactGA.initialize(REACT_APP_GA_TRACKING_CODE);
 
   useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
     if (product && match.params.id !== product._id) {
       dispatch(getProductDetails(match.params.id));
     }
@@ -96,4 +101,4 @@ const ProductScreen = ({ match, history }) => {
   );
 };
 
-export default ProductScreen;
+export default withRouter(ProductScreen);
