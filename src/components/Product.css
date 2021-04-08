@@ -6,6 +6,7 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   margin: 8px auto;
   display: flex;
+  border-radius: 5px;
   flex-direction: column;
   justify-content: space-between;
   flex-direction: column;
@@ -27,6 +28,7 @@
 }
 
 .info__name {
+  margin-top: 5px;
   font-size: 1rem;
   overflow: hidden;
 }
@@ -41,7 +43,9 @@
   text-align: center;
   color: #171717;
   width: 100%;
+  margin-top: 10px;
   padding: 8px 16px;
+  border-radius: 5px;
   background-color: #f4f4f4;
   border: 1px solid #171717;
   font-size: 1rem;
